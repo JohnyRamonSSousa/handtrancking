@@ -78,15 +78,15 @@ while True:
     if len(all_hands) == 1:
         info_finger_hand = fingers_raised(all_hands[0])
         
-        if info_finger_hand == [True, False, False, True]:  # Fecha o programa
+        if info_finger_hand == [False, False, False, True]:  # Fecha o programa
             break
         
-        elif info_finger_hand == [True, True, False, True] and vlc_process is None:
+        elif info_finger_hand == [True, False, False, True] and vlc_process is None:
             print('caiu aqui')
             vlc_process = start_program(f'"{vlc_path}" "{music_file_path}"')  # Inicie o VLC com o arquivo de música        elif info_finger_hand == [True, False, False, False] and notepad_process is None:
             notepad_process = start_program("notepad")
             
-        elif info_finger_hand == [False, False, False, False] and vlc_process is not None:
+        elif info_finger_hand == [True, True, True, True] and vlc_process is not None:
             send_keypress('space')  # Reproduzir/Pausar
         
         elif info_finger_hand == [True, True, False, False] and calc_process is None:
