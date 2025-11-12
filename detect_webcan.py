@@ -23,7 +23,7 @@ mspaint_process = None
 calc_process = None
 vlc_process = None
 vlc_path = r"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\VideoLAN\VLC media player"  # Atualize se necessário
-music_file_path = 'music/test.mp3'
+music_file_path = 'music/3 Doors Down - Away From The Sun.mp3'
 
 def find_coord_hand(img, side_inverted=False):
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -81,7 +81,7 @@ while True:
         if info_finger_hand == [False, False, False, True]:  # Fecha o programa
             break
         
-        elif info_finger_hand == [True, False, False, True] and vlc_process is None:
+        elif info_finger_hand == [True, True, False, True] and vlc_process is None:
             print('caiu aqui')
             vlc_process = start_program(f'"{vlc_path}" "{music_file_path}"')  # Inicie o VLC com o arquivo de música        elif info_finger_hand == [True, False, False, False] and notepad_process is None:
             notepad_process = start_program("notepad")
